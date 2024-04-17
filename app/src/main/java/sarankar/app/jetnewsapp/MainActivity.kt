@@ -10,6 +10,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.ui.Modifier
+import sarankar.app.jetnewsapp.ui.JetNewsApp
 import sarankar.app.jetnewsapp.ui.theme.JetNewsAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -19,14 +20,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val widthSizeClass = calculateWindowSizeClass(this).widthSizeClass
-            JetNewsAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                }
-            }
+            JetNewsApp()
         }
     }
 }
