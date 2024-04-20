@@ -10,8 +10,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.windowsizeclass.ExperimentalMaterial3WindowSizeClassApi
 import androidx.compose.material3.windowsizeclass.calculateWindowSizeClass
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontFamily
 import sarankar.app.jetnewsapp.ui.JetNewsApp
 import sarankar.app.jetnewsapp.ui.theme.JetNewsAppTheme
+import sarankar.app.jetnewsapp.ui.theme.Montserrat
 
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
@@ -20,7 +22,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val widthSizeClass = calculateWindowSizeClass(this).widthSizeClass
-            JetNewsApp()
+            JetNewsApp(
+                widthSizeClass = widthSizeClass,
+            )
         }
     }
 }

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">JetNewsApp</string>
+    <string name="jetnews_wordmark">JetNews Wordmark</string>
+    <string name="jetnews_logo">Jetnews Logo</string>
+    <string name="home">Home</string>
+    <string name="interests">Interests</string>
 </resources>

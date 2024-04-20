@@ -53,6 +53,15 @@ dependencies {
     //Window Size Class
     implementation(libs.androidx.material3.windowsizeclass)
 
+    //Downloadable fonts
+    implementation(libs.androidx.ui.text.google.fonts)
+
+    //Compose Navigation
+    implementation(libs.androidx.navigation.compose)
+
+    //Compose Icons
+    implementation("androidx.compose.material:material-icons-extended")
+
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
