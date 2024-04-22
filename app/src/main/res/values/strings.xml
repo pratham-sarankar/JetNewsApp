@@ -4,4 +4,7 @@
     <string name="jetnews_logo">Jetnews Logo</string>
     <string name="home">Home</string>
     <string name="interests">Interests</string>
+    <string name="load_error">Can\\\'t update latest news</string>
+    <string name="home_tap_to_load_content">Tap to load content</string>
+    <string name="retry">Retry</string>
 </resources>

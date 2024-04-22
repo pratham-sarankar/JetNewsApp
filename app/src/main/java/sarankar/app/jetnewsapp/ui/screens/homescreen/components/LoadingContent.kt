@@ -15,18 +15,11 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 fun LoadingContent(
     empty: Boolean,
     emptyContent: @Composable () -> Unit,
-    loading: Boolean,
     onRefresh: () -> Unit,
     content: @Composable () -> Unit,
 ) {
-    val state = rememberPullToRefreshState().apply {
-        if(loading){
-            startRefresh()
-        }else{
-            endRefresh()
-        }
-    }
-    if(state.isRefreshing){
+    val state = rememberPullToRefreshState()
+    if (state.isRefreshing) {
         LaunchedEffect(true) {
             onRefresh()
             state.endRefresh()
@@ -41,7 +34,7 @@ fun LoadingContent(
             content()
             PullToRefreshContainer(
                 state = state,
-                modifier =  Modifier.align(Alignment.TopCenter)
+                modifier = Modifier.align(Alignment.TopCenter)
             )
         }
     }

@@ -20,9 +20,11 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
+        val appContainer = (application as JetNewsApplication).container
         setContent {
             val widthSizeClass = calculateWindowSizeClass(this).widthSizeClass
             JetNewsApp(
+                appContainer = appContainer,
                 widthSizeClass = widthSizeClass,
             )
         }
