@@ -7,4 +7,8 @@
     <string name="load_error">Can\\\'t update latest news</string>
     <string name="home_tap_to_load_content">Tap to load content</string>
     <string name="retry">Retry</string>
+    <string name="home_post_min_read">%1$s - %2$d min read</string>
+    <string name="home_top_section_title">Top stories for you</string>
+    <string name="unbookmark">unbookmark</string>
+    <string name="bookmark">bookmark</string>
 </resources>
