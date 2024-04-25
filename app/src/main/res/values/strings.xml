@@ -11,4 +11,6 @@
     <string name="home_top_section_title">Top stories for you</string>
     <string name="unbookmark">unbookmark</string>
     <string name="bookmark">bookmark</string>
+    <string name="home_post_based_on_history">BASED ON YOUR STORY</string>
+    <string name="cd_more_actions">More actions</string>
 </resources>

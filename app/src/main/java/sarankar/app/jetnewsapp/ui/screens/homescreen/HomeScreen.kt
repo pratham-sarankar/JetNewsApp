@@ -8,6 +8,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import sarankar.app.jetnewsapp.ui.screens.homescreen.components.HomeScreenScaffold
+import sarankar.app.jetnewsapp.ui.screens.homescreen.components.posts.PostListHistorySection
+import sarankar.app.jetnewsapp.ui.screens.homescreen.components.posts.PostListPopularSection
 import sarankar.app.jetnewsapp.ui.screens.homescreen.components.posts.PostListSimpleSection
 import sarankar.app.jetnewsapp.ui.screens.homescreen.components.posts.PostListTopSection
 import sarankar.app.jetnewsapp.ui.screens.homescreen.uistate.HomeUiState
@@ -22,7 +24,7 @@ fun HomeScreen(
 ) {
     val uiState: HomeUiState by homeViewModel.uiState.collectAsStateWithLifecycle()
     HomeScreenScaffold(
-        showTopAppBar = true,
+        showTopAppBar = !isExpandedScreen,
         openDrawer = openDrawer,
         uiState = uiState,
         homeViewModel = homeViewModel,
@@ -49,6 +51,25 @@ fun HomeScreen(
                         favorites = state.favorites,
                         onToggleFavorite = {
                             homeViewModel.toggleFavorite(it)
+                        }
+                    )
+                }
+            }
+            if (state.postsFeed.popularPosts.isNotEmpty()) {
+                item {
+                    PostListPopularSection(
+                        posts = state.postsFeed.popularPosts,
+                        navigateToArticle = {
+                            homeViewModel.selectArticle(it)
+                        },
+                    )
+                }
+            }
+            if (state.postsFeed.recentPosts.isNotEmpty()) {
+                item {
+                    PostListHistorySection(posts = state.postsFeed.recentPosts,
+                        navigateToArticle = {
+                            homeViewModel.selectArticle(it)
                         }
                     )
                 }
